@@ -10,37 +10,41 @@ export default function Home() {
         transform: 'rotate(-28deg) skew(25deg)',
         transformOrigin: 'left'
       }}>
-        <h1 className="font-title text-5xl lg:text-6xl mb-4 text-nowrap ml-4 sm:ml-0 text-orange-600">
+        <h1 className="font-title text-5xl lg:text-6xl mb-4 text-nowrap ml-4 sm:ml-0 text-orange-600 tracking-tight">
           Hi, I&rsquo;m Fran
         </h1>
       </div>
       <div className="ml-8 lg:text-xl mr-8">
         <p className="mb-4">
-          I’m a self-taught software engineer with a background in design and specialized in front-end architecture.
+          I’m a self-taught software engineer from Argentina, based in Barcelona, with a background in design and specialized in front-end architecture.
         </p>
+        <h2 className="font-title text-orange-500">Work</h2>
         <p className="mb-4">
           I’ve been doing websites and apps as a freelancer for over 10 years.
           During that time, I’ve worked on all parts of the stack
           (design, front-end, documentation, infrastructure, developer tooling, backend, etc)
-
         </p>
-        <h2 className="font-title text-orange-500">Work</h2>
         <p className="mb-4">
           Currently working at UserTesting, as the Architect of the Developer Experience and Design System teams.
-          I love working on cross-functional teams and exploring the boundaries of the craft, working with technologies such as micro-frontends or Shadow DOM.
+          I love working on cross-functional teams, and exploring the boundaries of the craft,
+          for example, with technologies such as micro-frontends or Shadow DOM.
+        </p>
+        <p className="mb-4">
+          The most complex challenges, and the ones I enjoyed the most, were usually related to refactoring
+          old codebases and bringing them up to modern standars.
         </p>
         <h2 className="font-title text-orange-500">Background</h2>
         <p className="mb-4">
           I studied Graphic Design in college,
           where I learned valuable lessons about the importance of advocating for the user and the value of a great user experience.
           I’m interested in the interection of design and technology, and that’s why frontend engineering is what I love the most,
-          and why I like to work on areas such as accessibility and performance.
+          and why I like to bring the perspective of accessibility and performance to my work.
         </p>
 
         <div className="absolute font-title-alt mt-24">
           <Link
             href="/blog"
-            className="text-4xl font-bold text-blue-600 underline hover:bg-blue-600 hover:text-blue-100 hover:font-title hover:no-underline"
+            className="text-4xl font-bold text-blue-600 underline hover:bg-blue-600 hover:text-blue-100 hover:font-title hover:font-normal hover:no-underline hover:tracking-tighter"
           >
             Check out my blog
           </Link>
