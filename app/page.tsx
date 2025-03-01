@@ -1,101 +1,87 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="max-w-xl lg:max-w-2xl mx-auto my-24">
+      <Image src="/favicon.svg" width={150} height={150} alt="" className="mb-24 ml-12 sm:ml-0" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div style={{
+        transform: 'rotate(-28deg) skew(25deg)',
+        transformOrigin: 'left'
+      }}>
+        <h1 className="font-title text-5xl lg:text-6xl mb-4 text-nowrap ml-4 sm:ml-0 text-orange-600">
+          Hi, I&rsquo;m Fran
+        </h1>
+      </div>
+      <div className="ml-8 lg:text-xl mr-8">
+        <p className="mb-4">
+          I’m a self-taught software engineer with a background in design and specialized in front-end architecture.
+        </p>
+        <p className="mb-4">
+          I’ve been doing websites and apps as a freelancer for over 10 years.
+          During that time, I’ve worked on all parts of the stack
+          (design, front-end, documentation, infrastructure, developer tooling, backend, etc)
+
+        </p>
+        <h2 className="font-title text-orange-500">Work</h2>
+        <p className="mb-4">
+          Currently working at UserTesting, as the Architect of the Developer Experience and Design System teams.
+          I love working on cross-functional teams and exploring the boundaries of the craft, working with technologies such as micro-frontends or Shadow DOM.
+        </p>
+        <h2 className="font-title text-orange-500">Background</h2>
+        <p className="mb-4">
+          I studied Graphic Design in college,
+          where I learned valuable lessons about the importance of advocating for the user and the value of a great user experience.
+          I’m interested in the interection of design and technology, and that’s why frontend engineering is what I love the most,
+          and why I like to work on areas such as accessibility and performance.
+        </p>
+
+        <div className="absolute font-title-alt mt-24">
+          <Link
+            href="/blog"
+            className="text-4xl font-bold text-blue-600 underline hover:bg-blue-600 hover:text-blue-100 hover:font-title hover:no-underline"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Check out my blog
+          </Link>
+          <div className="mt-4 font-title-alt text-xl" style={{ maxWidth: "calc(100vw - calc(var(--spacing) * 8) - calc(300px - calc(var(--spacing) * 24)))" }}>
+            You can also find me on&nbsp;
+            <ExternalLink href="https://www.linkedin.com/in/franciscocanobrusa/">Linkedin</ExternalLink>&nbsp;&&nbsp;
+            <ExternalLink href="https://bsky.app/profile/francanobr.com">Bluesky</ExternalLink>.
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+
+        <div className="-mr-8 overflow-hidden sm:overflow-visible">
+          <div className="block ml-auto mt-6 -mr-24 text-sm text-center" style={{ width: 300 }}>
+            <Image src="/me.jpeg" alt="A picture of me" width={300} height={300} className="rounded-full" />
+            <svg
+              aria-hidden
+              className="mx-auto mt-4"
+              width="32"
+              height="32"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M32 56 Q48 48 32 40 Q16 32 32 24" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M32 24 L32 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M28 12 L32 8 L36 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <p>
+              A picture of me
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
+}
+
+function ExternalLink({ href, children, className }: { href: string; children: string; className?: string; }) {
+  return (
+    <a href={href} className={"text-blue-600 underline underline-offset-4 hover:bg-blue-600 hover:text-white hover:no-underline" + (className || "")}>
+      {children}
+    </a>
+  )
 }
