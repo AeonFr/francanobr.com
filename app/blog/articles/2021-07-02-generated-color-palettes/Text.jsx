@@ -1,4 +1,4 @@
-import styles from "./text.module.css"
+import styles from "./Text.module.css"
 
 export const Headline = ({ tag = "h1", ...props }) => {
   const Tag = tag;
