@@ -17,6 +17,11 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
         <main className="article">
           {children}
         </main>
+
+        <div className="my-8">
+          <hr className="mt-4 border-gray-400" />
+          <a href="#" className="text-gray-400 font-title">Back to top</a>
+        </div>
       </div>
     </div>
   );

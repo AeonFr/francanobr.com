@@ -25,7 +25,6 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import MultiRange from "multi-integer-range";
 
 const rootStyles = (hasLineNumbers) => ({
-  padding: "0.5em 1em",
   borderRadius: "0.5em",
   display: "grid",
   gridTemplateColumns: hasLineNumbers ? "auto 1fr" : "1fr",

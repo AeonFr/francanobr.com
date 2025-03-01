@@ -23,10 +23,9 @@
   line-height: var(--text-md--line-height);
 }
 
-.article img {
+.article img, .article pre {
   margin-top: calc(var(--spacing) * 6);
   margin-bottom: calc(var(--spacing) * 6);
-
 }
 
 .article button, .article input, .article ul, .article ol, .article li {
@@ -36,6 +35,7 @@
 .article a {
   color: var(--color-blue-600);
   text-decoration: underline;
+  
 }
 
 @media (width > 40rem) {
@@ -209,7 +209,6 @@ pre ::selection {
 }
 pre[class*="language-"] {
   padding: 1em;
-  margin: 0.5em 0;
   overflow: auto;
   background: var(--code-bg);
 }

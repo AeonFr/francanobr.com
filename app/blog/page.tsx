@@ -15,13 +15,18 @@ export default function Blog() {
         <nav>
           <ul>
             <li>
-              <BlogLink href="/blog/articles/2020-02-05-history-of-react" date="February 2020">
-                History of React and Modern JS Frameworks
+              <BlogLink href="/blog/articles/2023-01-24-you-cant-replace-redux-with-hooks-and-context" date="January 2023">
+                You can&rsquo;t replace Redux with Hooks and Context (thoughts on React state management)
               </BlogLink>
             </li>
             <li>
               <BlogLink href="/blog/articles/2021-07-02-generated-color-palettes" date="July 2021">
-                Generated color palettes
+                Generating color palettes programatically
+              </BlogLink>
+            </li>
+            <li>
+              <BlogLink href="/blog/articles/2020-02-05-history-of-react" date="February 2020">
+                History of React and Modern JS Frameworks
               </BlogLink>
             </li>
           </ul>
