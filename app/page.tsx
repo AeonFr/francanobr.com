@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="max-w-xl lg:max-w-2xl mx-auto my-24">
-      <Image src="/favicon.svg" width={150} height={150} alt="" className="mb-24 ml-12 sm:ml-0" />
+      <Image src="/favicon.svg" width={150} height={150} alt="" className="mb-24 ml-12 sm:ml-0" priority />
 
       <div style={{
         transform: 'rotate(-28deg) skew(25deg)',
