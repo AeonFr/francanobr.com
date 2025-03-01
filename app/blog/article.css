@@ -1,0 +1,304 @@
+@import "tailwindcss";
+
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+  font-family: var(--font-title);
+  margin-top: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.article h1 {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+}
+
+.article h2, .article h3, .article h4, .article h5, .article h6 {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
+}
+
+.article p {
+  margin-top: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-md);
+  line-height: var(--text-md--line-height);
+}
+
+.article img {
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 6);
+
+}
+
+.article button, .article input {
+  all: revert;
+}
+
+@media (width > 40rem) {
+  .article p {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
+  }
+}
+
+/** Syntax highlighting */
+
+/*
+ * This theme was generated automatically using an online generator, then some manual edits where made.
+ * The color scheme was designed by Francisco Brusa (www.franciscobrusa.dev)
+ * based on this design by @paperbeatsscissors: https://www.instagram.com/p/BzyJhiejKkJ/
+ * @author Francisco Brusa
+ */
+/* Generated with http://k88hudson.github.io/syntax-highlighting-theme-generator/www */
+/* http://k88hudson.github.io/react-markdocs */
+/**
+ * @author k88hudson
+ *
+ * Based on prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+.theme-snazzy {
+  /**
+   * Colors based on the snazzy theme palette
+   * https://github.com/loilo/vscode-snazzy-light
+   */
+  --white: #fff;
+  --lighter-gray: #f8f8f7;
+  --light-gray: #f1f1f0;
+  --medium-gray: #9194a2;
+  --dark-gray: #565869;
+  --black: #282a36;
+  --blacker-than-black: #1d1e25;
+  --light-red: #ff5c57;
+  --dark-red: #ff5c57;
+  --light-green: #59f78d;
+  --dark-green: #2dae58;
+  --light-yellow: #f3f99c;
+  --dark-yellow: #cf9c00;
+  --light-blue: #56c6ff;
+  --dark-blue: #0aa1ed;
+  --light-pink: #ff69c1;
+  --dark-pink: #f767bb;
+  --light-teal: #9aedfe;
+  --dark-teal: #14bbb7;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  .theme-snazzy {
+    --light-blue: color(display-p3 0.455 0.779 1);
+    --dark-blue: color(display-p3 0 0.493 0.905);
+    --light-pink: color(display-p3 1 0.425 0.78);
+    --dark-pink: color(display-p3 0.97 0.437 0.762);
+  }
+}
+
+.theme-snazzy.scheme-light {
+  /* website settings */
+  --bg: var(--white);
+  --color: var(--black);
+  --accent: var(--dark-pink);
+  --accent-alt: var(--dark-blue);
+  --code-bg: var(--lighter-gray);
+  --blockquote-line: var(--accent);
+
+  /* code syntax highlight */
+  /*
+  --user-selection: var(--light-gray);
+  --comment: var(--medium-gray);
+  --punctuation: var(--medium-gray);
+  --plain: var(--dark-gray);
+  --number: var(--dark-red);
+  --property: var(--dark-gray);
+  --variable: var(--dark-yellow);
+  --operator: var(--medium-gray);
+  --keyword: var(--dark-pink);
+  --function: var(--dark-blue);
+  */
+
+  /**
+   * Based on the relaxed theme
+   * https://github.com/Relaxed-Theme/vscode-theme-relaxed
+   */
+  /* --code-bg: white; */
+  --plain: #1a1a1a;
+  --user-selection: #c2e8f4;
+  --comment: #96928f;
+  --punctuation: #398bc9;
+  --number: #398bc9;
+  --property: #398bc9;
+  --variable: #333333;
+  --operator: #398bc9;
+  --keyword: #7b1fa2;
+  --function: #3f831e;
+}
+
+.theme-snazzy.scheme-dark {
+  /* website settings */
+  --bg: var(--blacker-than-black);
+  --color: var(--light-gray);
+  --accent: var(--light-blue);
+  --accent-alt: var(--light-pink);
+  --code-bg: var(--black);
+  --blockquote-line: var(--accent);
+
+  /* code syntax highlight */
+  --user-selection: var(--dark-gray);
+  --comment: var(--medium-gray);
+  --punctuation: var(--light-gray);
+  --plain: var(--white);
+  --number: var(--light-yellow);
+  --property: var(--light-gray);
+  --variable: var(--light-green);
+  --operator: var(--light-pink);
+  --keyword: var(--light-pink);
+  --function: var(--light-blue);
+
+  /**
+   * Based on the relaxed theme
+   * https://github.com/Relaxed-Theme/vscode-theme-relaxed
+  --code-bg: #2e333b;
+  --plain: #d9d9d9;
+  --user-selection: #6a79853a;
+  --comment: #727272;
+  --punctuation: #6a8799;
+  --number: #b06698;
+  --property: #ebc17a;
+  --variable: #d9d9d9;
+  --operator: #6a8799;
+  --keyword: #b06698;
+  --function: #7eaac7;
+   */
+}
+
+/*********************************************************
+* General
+*/
+pre[class*="language-"],
+code[class*="language-"] {
+  color: var(--property);
+  text-shadow: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+pre ::selection {
+  background-color: var(--user-selection);
+  color: inherit;
+  text-shadow: none;
+}
+@media print {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  background: var(--code-bg);
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: 0.7;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted {
+  color: var(--property);
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--comment);
+}
+.token.plain {
+  color: var(--plain);
+}
+.token.number {
+  color: var(--number);
+}
+.token.punctuation {
+  color: var(--punctuation);
+}
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--variable);
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--operator);
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--keyword);
+}
+.token.function,
+.token.property-access {
+  color: var(--function);
+}
+.token.function {
+  text-shadow: 0 0 0.1px var(--function);
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--accent);
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+  position: relative;
+}
+pre[class*="language-"] > code[class*="language-"] {
+  position: relative;
+  z-index: 1;
+}
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: #000000;
+  box-shadow: inset 5px 0 0 #ed6db1;
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}

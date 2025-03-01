@@ -20,15 +20,21 @@ body {
   --foreground: #171717;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+*/
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Archivo, Arial, Helvetica, sans-serif;
+}
+
+code, pre {
+  font-family: 'Chivo Mono', mono;
 }
