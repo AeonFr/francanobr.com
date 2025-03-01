@@ -10,7 +10,7 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
         <nav>
           <div className="font-title text-gray-500">Hi, I&rsquo;m Fran</div>
           <CustomLink href="/">Home</CustomLink>{" | "}
-          <CustomLink href="/">Blog</CustomLink>
+          <CustomLink href="/blog">Blog</CustomLink>
           <hr className="mt-2 border-gray-500" />
         </nav>
 
@@ -22,6 +22,6 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
   );
 }
 
-function CustomLink({href, children}: {href: string; children: string}) {
+function CustomLink({ href, children }: { href: string; children: string }) {
   return <Link href={href} className="text-blue-600 hover:bg-blue-600 hover:text-white">{children}</Link>
 }

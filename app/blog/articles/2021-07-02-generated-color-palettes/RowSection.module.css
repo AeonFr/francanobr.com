@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .row {
+    flex-direction: row;
+  }
+}
+
+.column {
+  flex: 1;
+}
+
+/* Safari fallback for gap not supported in older versions */
+@supports not ((gap: 1em) with (display: flex)) {
+  .column {
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+}

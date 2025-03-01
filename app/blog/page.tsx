@@ -12,14 +12,20 @@ export default function Blog() {
           Blog
         </h1>
 
-        <p className="my-8">
-          This page is currently being migrated to this domain, please follow{" "}
-          <a href="https://www.franciscobrusa.dev/" className="font-bold text-blue-600 underline hover:no-underline">this link</a>
-          {" "}to go to the blog.
-        </p>
-        <p className="my-8">
-          Sorry for the inconvenience!
-        </p>
+        <nav>
+          <ul>
+            <li>
+              <BlogLink href="/blog/articles/2020-02-05-history-of-react" date="February 2020">
+                History of React and Modern JS Frameworks
+              </BlogLink>
+            </li>
+            <li>
+              <BlogLink href="/blog/articles/2021-07-02-generated-color-palettes" date="July 2021">
+                Generated color palettes
+              </BlogLink>
+            </li>
+          </ul>
+        </nav>
 
         <Link
           href="/"
@@ -30,4 +36,17 @@ export default function Blog() {
       </div>
     </div>
   );
+}
+
+function BlogLink({ href, children, date }: { href: string, children: string, date: string }) {
+  return (
+    <Link href={href} className="block my-8 p-8 border-blue-600 border-1 hover:bg-blue-600 hover:text-white">
+      <span className="block text-xl font-title">
+        {children}
+      </span>
+      <span className="block text-md font-title-alt">
+        {date}
+      </span>
+    </Link>
+  )
 }

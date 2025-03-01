@@ -1,0 +1,71 @@
+.headline p {
+  max-width: 35rem;
+  font-size: 2.5em;
+}
+.headline p {
+  /* Fallback gradient with many stops */
+  background-image: linear-gradient(
+    90deg,
+    #f767bb 0% 2%,
+    #f469bc 2% 4%,
+    #f26bbd 4% 6%,
+    #ef6dbe 6% 8%,
+    #ed6ebf 8% 10%,
+    #ea70c0 10% 12%,
+    #e772c1 12% 14%,
+    #e573c2 14% 16%,
+    #e275c3 16% 18%,
+    #df77c4 18% 20%,
+    #dc78c5 20% 22%,
+    #da7ac6 22% 24%,
+    #d77bc7 24% 26%,
+    #d47cc8 26% 28%,
+    #d17ec9 28% 30%,
+    #ce7fca 30% 32%,
+    #cb81cb 32% 34%,
+    #c882cc 34% 36%,
+    #c583cd 36% 38%,
+    #c284ce 38% 40%,
+    #bf86cf 40% 42%,
+    #bc87d0 42% 44%,
+    #b888d1 44% 46%,
+    #b589d2 46% 48%,
+    #b28ad3 48% 50%,
+    #ae8bd4 50% 52%,
+    #ab8cd5 52% 54%,
+    #a78dd6 54% 56%,
+    #a48fd7 56% 58%,
+    #a090d8 58% 60%,
+    #9c91d9 60% 62%,
+    #9892da 62% 64%,
+    #9493db 64% 66%,
+    #9094dc 66% 68%,
+    #8b94dd 68% 70%,
+    #8795de 70% 72%,
+    #8296df 72% 74%,
+    #7d97e0 74% 76%,
+    #7898e2 76% 78%,
+    #7399e3 78% 80%,
+    #6e9ae4 80% 82%,
+    #689be5 82% 84%,
+    #619ce6 84% 86%,
+    #5a9ce7 86% 88%,
+    #539de8 88% 90%,
+    #4a9ee9 90% 92%,
+    #419fea 92% 94%,
+    #359feb 94% 96%,
+    #26a0ec 96% 98%,
+    #0aa1ed 98% 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smallText p {
+  font-size: 0.8em;
+}
+
+.bigText p {
+  font-size: 1.4em;
+}
