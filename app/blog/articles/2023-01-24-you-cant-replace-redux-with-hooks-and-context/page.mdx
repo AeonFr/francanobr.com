@@ -7,10 +7,14 @@ export const metadata = {
   thumbnail:
     "/blog/you-cant-replace-redux-with-hooks-and-context/thumbnail.png",
 };
+import EnhancedExperienceLoader from "./EnhancedExperienceLoader.tsx";
 
-# You can’t replace Redux with Hooks and Context
-
-_Published on January 2023_
+export default ({children}) => {
+  return <EnhancedExperienceLoader
+    title="You can’t replace Redux with Hooks and Context"
+    subtitle="Published on January 2023"
+  >{children}</EnhancedExperienceLoader>;
+}
 
 React’s Context API is a great tool to share state between components without passing props multiple levels down, but it was never intended to be a state management solution by itself.
 
