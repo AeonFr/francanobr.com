@@ -56,7 +56,13 @@ export default function EnhancedExperienceLoader({title, subtitle, children}: En
               {!enhancedExperience ? (
                 <>
                   An enhanced experience is available for this article.
-                  <button onClick={() => setEnhancedExperience(true)}>Enable</button>
+                  <div className="mt-4">
+                    <button
+                      onClick={() => setEnhancedExperience(true)}
+                      className="bg-amber-700 text-white border-none px-4 py-2 rounded-lg text-base font-bold hover:bg-amber-800 cursor-pointer"
+                      style={{fontFamily: "inherit"}}
+                    >Enable</button>
+                  </div>
                 </>
               ) : (
                 <em>Loading...</em>
