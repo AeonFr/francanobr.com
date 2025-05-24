@@ -1,8 +1,8 @@
 "use client";
 
-import React, {use, cache} from "react";
+import React, {use} from "react";
 import ReactDOM, {createPortal} from "react-dom";
-import {init, loadShare, loadRemote} from "@module-federation/enhanced/runtime";
+import {init, loadRemote} from "@module-federation/enhanced/runtime";
 
 const articlePromise = loadArticle();
 
