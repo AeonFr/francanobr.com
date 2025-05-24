@@ -12,6 +12,7 @@ interface BaseSquircleProps {
   smooth?: number;
   radius?: number;
   background?: string;
+  backgroundHover?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -24,6 +25,7 @@ export default function Squircle<C extends React.ElementType = 'div'>({
   radius,
   children,
   background,
+  backgroundHover,
   as,
   className = '',
   style = {},
@@ -34,6 +36,7 @@ export default function Squircle<C extends React.ElementType = 'div'>({
     ...(smooth ? { '--squircle-smooth': smooth } : {}),
     ...(radius ? { '--squircle-radius': `${radius}px` } : {}),
     ...(background ? { '--squircle-background': background } : {}),
+    ...(backgroundHover ? { '--squircle-background-hover': backgroundHover } : {}),
     ...style,
   } as React.CSSProperties;
 

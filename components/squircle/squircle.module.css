@@ -11,4 +11,9 @@
 	mask-image: paint(squircle); */
   background: paint(squircle);
   --squircle-fill: var(--squircle-background, black);
+  transition: --squircle-fill 0.2s ease;
+}
+
+.fill:hover {
+  --squircle-fill: var(--squircle-background-hover, var(--squircle-background, black));
 }
