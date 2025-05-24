@@ -9,11 +9,9 @@ type AsProp<C extends React.ElementType> = {
 
 interface BaseSquircleProps {
   children: React.ReactNode;
-  type?: "fill" | "outline" | "gradient";
   smooth?: number;
   radius?: number;
   background?: string;
-  gradientStops?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -22,12 +20,10 @@ interface BaseSquircleProps {
 type SquircleProps<C extends React.ElementType = 'div'> = BaseSquircleProps & AsProp<C>;
 
 export default function Squircle<C extends React.ElementType = 'div'>({
-  type = "fill",
   smooth,
   radius,
   children,
   background,
-  gradientStops,
   as,
   className = '',
   style = {},
@@ -38,13 +34,12 @@ export default function Squircle<C extends React.ElementType = 'div'>({
     ...(smooth ? { '--squircle-smooth': smooth } : {}),
     ...(radius ? { '--squircle-radius': `${radius}px` } : {}),
     ...(background ? { '--squircle-background': background } : {}),
-    ...(gradientStops && type === 'gradient' ? { '--squircle-gradient-stops': gradientStops } : {}),
     ...style,
   } as React.CSSProperties;
 
   return (
     <Component
-      className={`${styles.button} ${styles[type]} ${className}`.trim()}
+      className={`${styles.button} ${styles.fill} ${className}`.trim()}
       style={squircleStyle}
       {...rest}
     >
