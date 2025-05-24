@@ -16,22 +16,18 @@ export default function Home() {
       </div>
       <div className="ml-8 lg:text-xl mr-8">
         <p className="mb-4">
-          I’m a self-taught software engineer from Argentina, based in Barcelona, with a background in design and specialized in front-end architecture.
+          I’m a self-taught software engineer specializing in front-end architecture and performance.
+          With a background in design, I bring a user-centered approach to my craft.
         </p>
         <h2 className="font-title text-orange-500">Work</h2>
         <p className="mb-4">
           I’ve been doing websites and apps as a freelancer for over 10 years.
-          During that time, I’ve worked on all parts of the stack
-          (design, front-end, documentation, infrastructure, developer tooling, backend, etc)
+          I’ve worked across the entire stack—design, frontend, backend, infrastructure, tooling, and documentation.
         </p>
         <p className="mb-4">
-          Currently working at UserTesting, as the Architect of the Developer Experience and Design System teams.
-          I love working on cross-functional teams, and exploring the boundaries of the craft,
-          for example, with technologies such as micro-frontends or Shadow DOM.
-        </p>
-        <p className="mb-4">
+          I love working on cross-functional teams, and exploring the boundaries of the craft.
           The most complex challenges, and the ones I enjoyed the most, were usually related to refactoring
-          old codebases and bringing them up to modern standars.
+          old codebases and bringing them up to modern standards.
         </p>
         <h2 className="font-title text-orange-500">Background</h2>
         <p className="mb-4">
@@ -46,7 +42,7 @@ export default function Home() {
             href="/blog"
             className="text-4xl font-bold text-blue-600 underline hover:bg-blue-600 hover:text-blue-100 hover:font-title hover:font-normal hover:no-underline hover:tracking-tighter"
           >
-            Check out my blog
+            Blog
           </Link>
           <div className="mt-4 font-title-alt text-xl" style={{ maxWidth: "calc(100vw - calc(var(--spacing) * 8) - calc(300px - calc(var(--spacing) * 24)))" }}>
             You can also find me on&nbsp;
