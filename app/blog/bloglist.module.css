@@ -1,0 +1,9 @@
+.squircleBlogItem {
+  --squircle-background: var(--color-blue-100);
+	--squircle-smooth: 0.3;
+	--squircle-radius: 30px;
+}
+
+.squircleBlogItem:hover {
+  --squircle-background: var(--color-blue-600);
+}

@@ -1,0 +1,20 @@
+/* Copied from squircle.css for CSS Modules */
+.button {
+	outline: none;
+	border: none;
+	--squircle-smooth: 0.8;
+	--squircle-radius: 20px;
+  background: paint(squircle);
+  --squircle-fill: var(--squircle-background, black);
+  transition: --squircle-fill 0.2s ease;
+}
+
+.button:hover {
+  --squircle-fill: var(--squircle-background-hover, var(--squircle-background, black));
+}
+
+.button.fallback {
+  background: var(--squircle-fill, black);
+  border-radius: var(--squircle-radius);
+}
+
