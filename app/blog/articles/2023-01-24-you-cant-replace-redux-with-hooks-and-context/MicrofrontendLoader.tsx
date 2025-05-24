@@ -9,7 +9,7 @@ const articlePromise = loadArticle();
 export default function MicrofrontendLoader() {
   const microfrontend = use(articlePromise);
 
-  return createPortal(microfrontend(), document.querySelector("#bleedthrough-article"));
+  return createPortal(microfrontend(), document.querySelector("#bleedthrough-article")!);
 }
 
 async function loadArticle() {
@@ -41,7 +41,8 @@ async function loadArticle() {
       },
     },
   });
-  const remote = await loadRemote("youcantreplacereduxwithcontext");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const remote: any = await loadRemote("youcantreplacereduxwithcontext");
 
   return remote.default;
 }

@@ -1,12 +1,18 @@
 "use client";
 
-import { useState, useEffect, Suspense, lazy, useDeferredValue } from 'react';
+import { ReactNode, useState, useEffect, Suspense, lazy, useDeferredValue } from 'react';
 import SquircleProvider from "../../../../components/squircle/SquircleProvider";
 import Squircle from "../../../../components/squircle/Squircle";
 
 const MicrofrontendLoader = lazy(() => import("./MicrofrontendLoader"));
 
-export default function EnhancedExperienceLoader({title, subtitle, children}) {
+interface EnhancedExperienceLoaderProps {
+  title: string;
+  subtitle: string;
+  children: ReactNode;
+}
+
+export default function EnhancedExperienceLoader({title, subtitle, children}: EnhancedExperienceLoaderProps) {
   const [canLoadEnhancedExperience, setCanLoadEnhancedExperience] = useState(false);
   const [enhancedExperience, setEnhancedExperience] = useState(false);
 
@@ -20,7 +26,7 @@ export default function EnhancedExperienceLoader({title, subtitle, children}) {
       setCanLoadEnhancedExperience(mediaQuery.matches);
       
       // Create handler function for media query changes
-      const handleMediaQueryChange = (event) => {
+      const handleMediaQueryChange = (event: MediaQueryListEvent) => {
         setCanLoadEnhancedExperience(event.matches);
       };
       
