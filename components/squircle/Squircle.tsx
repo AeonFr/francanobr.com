@@ -1,13 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import styles from "./squircle.module.css";
 
-// Utility type for inferring props for the 'as' component
-// This allows Squircle to accept all props of the component passed to 'as'
-type AsProp<C extends React.ElementType> = {
-  as?: C;
-} & Omit<React.ComponentPropsWithoutRef<C>, 'as' | 'className' | 'style'>;
-
-interface BaseSquircleProps {
+interface SquircleProps {
   children: React.ReactNode;
   smooth?: number;
   radius?: number;
@@ -17,21 +13,16 @@ interface BaseSquircleProps {
   style?: React.CSSProperties;
 }
 
-// Generic SquircleProps type
-type SquircleProps<C extends React.ElementType = 'div'> = BaseSquircleProps & AsProp<C>;
-
-export default function Squircle<C extends React.ElementType = 'div'>({
+export default function Squircle({
   smooth,
   radius,
   children,
   background,
   backgroundHover,
-  as,
   className = '',
   style = {},
   ...rest
-}: SquircleProps<C>) {
-  const Component = as || 'div';
+}: SquircleProps) {
   const squircleStyle = {
     ...(smooth ? { '--squircle-smooth': smooth } : {}),
     ...(radius ? { '--squircle-radius': `${radius}px` } : {}),
@@ -40,13 +31,20 @@ export default function Squircle<C extends React.ElementType = 'div'>({
     ...style,
   } as React.CSSProperties;
 
+  const [fallbackMode, setFallbackMode] = useState(true);
+
+  useEffect(() => {
+    setFallbackMode(!("paintWorklet" in CSS));
+  }, [])
+
+
   return (
-    <Component
-      className={`${styles.button} ${styles.fill} ${className}`.trim()}
+    <div
+      className={`${styles.button} ${fallbackMode ? styles.fallback : ''} ${className}`.trim()}
       style={squircleStyle}
       {...rest}
     >
       {children}
-    </Component>
+    </div>
   );
 }

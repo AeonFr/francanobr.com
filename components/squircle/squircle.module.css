@@ -4,16 +4,17 @@
 	border: none;
 	--squircle-smooth: 0.8;
 	--squircle-radius: 20px;
-}
-
-.fill {
-	/* background: var(--squircle-background, black);
-	mask-image: paint(squircle); */
   background: paint(squircle);
   --squircle-fill: var(--squircle-background, black);
   transition: --squircle-fill 0.2s ease;
 }
 
-.fill:hover {
+.button:hover {
   --squircle-fill: var(--squircle-background-hover, var(--squircle-background, black));
 }
+
+.button.fallback {
+  background: var(--squircle-fill, black);
+  border-radius: var(--squircle-radius);
+}
+
