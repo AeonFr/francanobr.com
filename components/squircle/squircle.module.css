@@ -12,14 +12,3 @@
   background: paint(squircle);
   --squircle-fill: var(--squircle-background, black);
 }
-
-.outline {
-	background: paint(squircle);
-	--squircle-outline: 2px;
-	--squircle-fill: var(--squircle-background, black);
-}
-
-.gradient {
-	background: linear-gradient(var(--squircle-gradient-stops, 122.37deg, #FF0000 6.31%, #00FFA3 85.76%));
-	mask-image: paint(squircle);
-}
