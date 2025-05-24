@@ -1,4 +1,10 @@
-import { useState, useEffect } from 'react';
+"use client";
+
+import { useState, useEffect, Suspense, lazy, useDeferredValue } from 'react';
+import SquircleProvider from "../../../../components/squircle/SquircleProvider";
+import Squircle from "../../../../components/squircle/Squircle";
+
+const MicrofrontendLoader = lazy(() => import("./MicrofrontendLoader"));
 
 export default function EnhancedExperienceLoader({title, subtitle, children}) {
   const [canLoadEnhancedExperience, setCanLoadEnhancedExperience] = useState(false);
@@ -28,12 +34,33 @@ export default function EnhancedExperienceLoader({title, subtitle, children}) {
     }
   }, []);
 
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p><em>{subtitle}</em></p>
+  const deferedEnhancedExperience = useDeferredValue(enhancedExperience);
 
-      {children}
-    </div>
+  return (
+    <Suspense>
+      {deferedEnhancedExperience ? (
+        <MicrofrontendLoader/>
+      ) : (
+        <SquircleProvider>
+          <h1>{title}</h1>
+          <p><em>{subtitle}</em></p>
+
+          {canLoadEnhancedExperience && (
+            <Squircle background="var(--color-amber-200)" className="px-6 py-4 font-bold my-6">
+              {!enhancedExperience ? (
+                <>
+                  An enhanced experience is available for this article.
+                  <button onClick={() => setEnhancedExperience(true)}>Enable</button>
+                </>
+              ) : (
+                <em>Loading...</em>
+              )}
+            </Squircle>
+          )}
+
+          {children}
+        </SquircleProvider>
+      )}
+    </Suspense>
   );
 }
