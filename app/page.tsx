@@ -54,7 +54,7 @@ export default function Home() {
 
         <div className="-mr-8 overflow-hidden sm:overflow-visible">
           <div className="block ml-auto mt-6 -mr-24 text-sm text-center" style={{ width: 300 }}>
-            <Image src="/me.jpeg" alt="A picture of me" width={300} height={300} className="rounded-full" />
+            <Image src="/me.png" alt="A picture of me" width={300} height={300} className="rounded-full" />
             <svg
               aria-hidden
               className="mx-auto mt-4"
