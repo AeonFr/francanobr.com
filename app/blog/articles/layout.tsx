@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function BlogPostLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Container>
+      <Container className="mt-8">
         <nav>
-          <div className="font-title text-gray-500">Hi, I&rsquo;m Fran</div>
+          <div className="font-title text-gray-500 mb-2">Hi, I&rsquo;m Fran</div>
           <CustomLink href="/">Home</CustomLink>{" | "}
           <CustomLink href="/blog">Blog</CustomLink>
           <hr className="mt-2 border-gray-500" />
@@ -24,7 +24,7 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
       <div id="bleedthrough-article" />
 
       <Container>
-        <div className="my-8">
+        <div className="my-9">
           <hr className="mt-4 border-gray-400" />
           <a href="#" className="text-gray-400 font-title">Back to top</a>
         </div>
@@ -33,9 +33,9 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
   );
 }
 
-function Container({ children }: { children: React.ReactNode }){
+function Container({ children, className }: { children: React.ReactNode, className?: string }){
   return (
-    <div className="max-w-4xl mx-auto my-8">
+    <div className={`max-w-3xl mx-auto ${className}`}>
       <div className="mx-8">
         {children}
       </div>

@@ -19,6 +19,11 @@ export default function Blog() {
           <nav>
             <ul>
               <li>
+                <BlogLink href="/blog/articles/2025-06-08-making-it-worse-to-make-it-better" date="June 2025">
+                  Making it worse to make it better
+                </BlogLink>
+              </li>
+              <li>
                 <BlogLink href="/blog/articles/2023-01-24-you-cant-replace-redux-with-hooks-and-context" date="January 2023">
                   You can&rsquo;t replace Redux with Hooks and Context (thoughts on React state management)
                 </BlogLink>
