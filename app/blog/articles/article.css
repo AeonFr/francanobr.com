@@ -41,13 +41,13 @@ html.show-grid body {
 }
 
 .article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
-  --baselines: 4;
+  --baselines: 3;
   font-family: var(--font-title);
   padding-top: calc(var(--baseline-shift) + 1rem);
 }
 
 .article h1 {
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
 }
 
 .article h2, .article h3, .article h4, .article h5, .article h6 {
@@ -71,6 +71,10 @@ html.show-grid body {
 }
 
 @media (width > 40rem) {
+  .article h1 {
+    font-size: var(--text-4xl);
+  }
+
   .article p, .article li {
     font-size: var(--text-lg);
   }
