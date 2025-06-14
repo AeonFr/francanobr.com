@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={process.env.NODE_ENV === 'production' ? '' : 'show-grid'}>
       <body
         className={`${archivo.variable} ${archivoBlack.variable} ${archivoNarrow.variable} ${chivoMono.variable} antialiased`}
       >

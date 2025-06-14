@@ -1,5 +1,5 @@
 import React from "react";
-import "./article.css";
+import "./syntax-highlight.css"
 import Link from "next/link";
 
 export default function BlogPostLayout({ children }: { children: React.ReactNode }) {
@@ -7,9 +7,7 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
     <>
       <Container className="mt-8">
         <nav>
-          <div className="font-title text-gray-500 mb-2">Hi, I&rsquo;m Fran</div>
-          <CustomLink href="/">Home</CustomLink>{" | "}
-          <CustomLink href="/blog">Blog</CustomLink>
+          <CustomLink href="/">Hi, I&rsquo;m Fran</CustomLink>
           <hr className="mt-2 border-gray-500" />
         </nav>
       </Container>
@@ -44,5 +42,5 @@ function Container({ children, className }: { children: React.ReactNode, classNa
 }
 
 function CustomLink({ href, children }: { href: string; children: string }) {
-  return <Link href={href} className="text-blue-600 hover:bg-blue-600 hover:text-white">{children}</Link>
+  return <Link href={href} className="font-title mb-2 text-blue-600 hover:bg-blue-600 hover:text-white">{children}</Link>
 }

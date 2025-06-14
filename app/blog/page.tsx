@@ -2,6 +2,7 @@ import Squircle from "@/components/squircle/Squircle";
 import SquircleProvider from "@/components/squircle/SquircleProvider";
 import Link from "next/link";
 import styles from "./bloglist.module.css";
+import FooterNav from "@/components/FooterNav";
 
 export const metadata = {
   title: "Blog",
@@ -41,12 +42,9 @@ export default function Blog() {
             </ul>
           </nav>
 
-          <Link
-            href="/"
-            className="font-bold text-blue-600 underline hover:bg-blue-600 hover:text-blue-100 hover:font-title hover:font-normal hover:no-underline hover:tracking-tighter"
-          >
-            Go back to the homepage
-          </Link>
+          <footer>
+            <FooterNav />
+          </footer>
         </div>
       </div>
     </SquircleProvider>
@@ -56,11 +54,11 @@ export default function Blog() {
 function BlogLink({ href, children, date }: { href: string, children: string, date: string }) {
   return (
     <Squircle className={styles.squircleBlogItem}>
-      <Link href={href} className="block my-8 p-8 hover:text-white">
+      <Link href={href} className="block my-9 p-8 hover:text-white">
         <span className="block text-xl font-title">
           {children}
         </span>
-        <span className="block text-md font-title-alt">
+        <span className="block text-md font-title-alt mt-2">
           {date}
         </span>
       </Link>

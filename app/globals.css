@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Show baseline grid */
+html.show-grid body {
+  background-image: linear-gradient(to bottom, #0ff 0, transparent 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 1rem;
+}
+
 body {
   --font-sans: var(--font-archivo);
   --font-mono: var(--font-chivo-mono);
@@ -20,15 +27,6 @@ body {
   --foreground: #171717;
 }
 
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-*/
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -37,4 +35,85 @@ body {
 
 code, pre {
   font-family: 'Chivo Mono', mono;
+}
+
+.article {
+  --baselines: 2;
+  --beneath: 1;
+  --baseline-shift: calc(calc(calc(var(--baselines) * 1rem) - 1cap) / 2);
+  --baseline-push: calc(calc(var(--beneath) * 1rem) - var(--baseline-shift));
+
+  text-wrap: pretty;
+}
+
+/* un-do css reset for some elements */
+.article button, .article input, .article ul, .article ol, .article li {
+  all: revert;
+}
+
+/**
+* Reset margins and paddings
+*/
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6,
+.article p, .article li, .article ol, .article ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Use baseline grid (--baselines should be adjustbed based on font size) */
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6,
+.article p, .article li {
+  line-height: calc(var(--baselines) * 1rem);
+  padding-top: var(--baseline-shift);
+  margin-bottom: var(--baseline-push);
+}
+
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+  --baselines: 3;
+  font-family: var(--font-title);
+  /** recalculate with new font-family */
+  --baseline-shift: calc(calc(calc(var(--baselines) * 1rem) - 1cap) / 2);
+  --baseline-push: calc(calc(var(--beneath) * 1rem) - var(--baseline-shift));
+  /** apply but also add 1rem */
+  padding-top: calc(var(--baseline-shift) + 1rem);
+}
+
+.article h1 {
+  font-size: var(--text-3xl);
+}
+
+.article h2, .article h3, .article h4, .article h5, .article h6 {
+  font-size: var(--text-xl);
+}
+
+.article p, .article li {
+  font-size: var(--text-base);
+}
+
+.article img, .article pre {
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 6);
+}
+
+
+.article a {
+  color: var(--color-blue-600);
+  text-decoration: underline;
+  
+}
+
+@media (width > 40rem) {
+  .article h1 {
+    font-size: var(--text-4xl);
+  }
+
+  .article h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .article p, .article li {
+    font-size: var(--text-lg);
+  }
 }
