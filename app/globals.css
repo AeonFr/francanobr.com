@@ -10,16 +10,12 @@ html.show-grid body {
 body {
   --font-sans: var(--font-archivo);
   --font-mono: var(--font-chivo-mono);
-  --font-title: var(--font-archivo-black);
-  --font-title-alt: var(--font-archivo-narrow);
   --color-orange-600: rgb(201, 91, 31);
 }
 
 @theme {
   --font-sans: var(--font-archivo);
   --font-mono: var(--font-chivo-mono);
-  --font-title: var(--font-archivo-black);
-  --font-title-alt: var(--font-archivo-narrow);
 }
 
 :root {
@@ -35,6 +31,18 @@ body {
 
 code, pre {
   font-family: 'Chivo Mono', mono;
+}
+
+.font-title {
+  font-family: var(--font-archivo);
+  font-weight: 850;
+  font-stretch: 90%;
+}
+
+.font-title-alt {
+  font-family: var(--font-archivo);
+  font-weight: 490;
+  font-stretch: 77%;
 }
 
 .article {
@@ -73,6 +81,7 @@ code, pre {
 .article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
   --baselines: 3;
   font-family: var(--font-title);
+  font-weight: 800;
   /** recalculate with new font-family */
   --baseline-shift: calc(calc(calc(var(--baselines) * 1rem) - 1cap) / 2);
   --baseline-push: calc(calc(var(--beneath) * 1rem) - var(--baseline-shift));

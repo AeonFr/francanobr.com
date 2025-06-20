@@ -38,7 +38,7 @@ export default function Home() {
             </p>
         </main>
 
-        <footer className="absolute font-title-alt mt-24">
+        <footer className="absolute mt-24">
           <FooterNav/>
         </footer>
 

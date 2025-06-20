@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="max-w-xl lg:max-w-2xl mx-auto my-24">
+    <div className="max-w-xl lg:max-w-2xl mx-auto my-24" style={{fontWeight: 750, fontStretch: '115%'}}>
       adssads
     </div>
   );

@@ -1,26 +1,16 @@
 import type { Metadata } from "next";
-import { Archivo, Archivo_Black, Archivo_Narrow, Chivo_Mono } from "next/font/google";
+import { Archivo, Chivo_Mono } from "next/font/google";
 import "./globals.css";
 
 const archivo = Archivo({
   variable: "--font-archivo",
-  subsets: ["latin"]
+  subsets: ["latin"],
+  axes: ['wdth'],
 });
-
-const archivoBlack = Archivo_Black({
-  variable: "--font-archivo-black",
-  weight: "400",
-  subsets: ["latin"]
-});
-
-const archivoNarrow = Archivo_Narrow({
-  variable: "--font-archivo-narrow",
-  subsets: ["latin"]
-})
 
 const chivoMono = Chivo_Mono({
   variable: "--font-chivo-mono",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={process.env.NODE_ENV === 'production' ? '' : 'show-grid'}>
       <body
-        className={`${archivo.variable} ${archivoBlack.variable} ${archivoNarrow.variable} ${chivoMono.variable} antialiased`}
+        className={`${archivo.variable} ${chivoMono.variable} antialiased`}
       >
         {children}
       </body>

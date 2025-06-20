@@ -18,23 +18,26 @@ function FooterNavLink({href, as, rel, children}: FooterNavLinkProps) {
 
     return (
         <div className="relative">
-            <El
-                href={href}
-                rel={rel}
-                className="
-                    absolute
-                    text-blue-600
-                    underline
-                    hover:bg-blue-600 hover:text-blue-100
-                    font-title font-normal tracking-tighter
-                    hover:no-underline hover:tracking-wide
-                    p-3 -inset-3
-                    "
-            >
-                {children}
-            </El>
+            <div className="absolute -inset-3">
+                <El
+                    href={href}
+                    rel={rel}
+                    className="
+                        p-3
+                        text-blue-600
+                        underline
+                        hover:bg-blue-600 hover:text-blue-100
+                        font-extrabold
+                        hover:no-underline hover:font-stretch-semi-expanded
+                        transition-[font-stretch]
+                        basis-full
+                        "
+                >
+                    {children}
+                </El>
+            </div>
             {/* An empty element to take proper width */}
-            <div aria-hidden="true" className="invisible font-title tracking-wide">{children}</div>
+            <div aria-hidden="true" className="invisible font-extrabold font-stretch-semi-expanded">{children}</div>
         </div>
     )
 }
@@ -43,7 +46,7 @@ export default function FooterNav() {
     return (
         <footer className="w-full py-6 mt-8 border-t">
             <nav className="container mx-auto px-4">
-                <ul className="flex flex-wrap justify-center gap-6 text-sm">
+                <ul className="flex justify-center gap-6 text-sm">
                     <li>
                         <FooterNavLink href="/" as={NextLink}>
                             Home
