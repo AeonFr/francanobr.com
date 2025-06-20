@@ -55,7 +55,7 @@ html.show-grid body {
 }
 
 .article p, .article li {
-  font-size: var(--text-md);
+  font-size: var(--text-base);
 }
 
 .article img, .article pre {
@@ -66,8 +66,35 @@ html.show-grid body {
 
 .article a {
   color: var(--color-blue-600);
-  text-decoration: underline;
-  
+  text-decoration: underline; 
+}
+
+.article table {
+  margin-bottom: var(--baseline-push);
+}
+
+.article th, .article td {
+  text-align: left;
+  border-bottom: 1px solid transparent;
+  --baselines: 1;
+  font-size: var(--text-base);
+  line-height: calc(var(--baselines) * 1rem);
+  padding-top: var(--baseline-shift);
+  padding-bottom: calc(var(--baseline-push) - 1px);
+  padding-right: var(--baseline-shift);
+  font-variant-numeric: tabular-nums;
+}
+
+.article th {
+  border-bottom-color: var(--foreground);
+}
+
+.article tr:nth-child(even) {
+  background-color: var(--color-gray-50);
+}
+
+.article th[align="right"], .article td[align="right"] {
+  text-align: right;
 }
 
 @media (width > 40rem) {

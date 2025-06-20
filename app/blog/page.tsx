@@ -19,7 +19,12 @@ export default function Blog() {
           <nav>
             <ul>
               <li>
-                <BlogLink href="/blog/articles/2025-06-08-making-it-worse-to-make-it-better" date="June 2025">
+                <BlogLink href="/blog/articles/2025-06-20-the-size-of-your-node-modules-is-a-feature-not-a-bug" date="June 20, 2025">
+                  The size of your node_modules is a feature, not a bug
+                </BlogLink>
+              </li>
+              <li>
+                <BlogLink href="/blog/articles/2025-06-08-making-it-worse-to-make-it-better" date="June 8, 2025">
                   Making it worse to make it better
                 </BlogLink>
               </li>
