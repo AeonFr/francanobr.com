@@ -1,0 +1,71 @@
+# The size of your node_modules is a feature, not a bug
+
+_June 20, 2025_
+
+Much has been written about the chaotic JavaScript ecosystem. node_modules folders that balloon to sizes larger than the known universe and packages that use AI to tell if a number is even have become regular memes used to criticize the state of affairs. Yet few have stopped to consider the upside: this sprawling modularity is less a bug than a defining characteristic of a fast-moving innovation ecosystem and of healthy open-source.
+
+In her 2020 book Working in Public: The Making and Maintenance of Open Source Software, Nadia Eghbal observes that npm hosts over one million packages—far more than RubyGems’ 153,000 or PyPI’s 175,000. “In one sense, JavaScript’s modularity makes the ecosystem more brittle,” she writes, “since there are more dependencies, each managed by different developers.” But she immediately turns the tables: “A modular approach is theoretically more resilient. Even if one package disappears, its smaller scope makes it easier for developers to contain the problem and find a substitute.”
+
+Eghbal’s data reveal another upside for maintainers. Among the top 50 packages in each ecosystem, npm projects average 3.5 million dependents but only 35 direct contributors—far fewer maintainers per project than Java’s Maven (99), Python’s pip (204), .NET’s NuGet (109), or RubyGems (146):
+
+
+<table>
+  <thead>
+    <tr>
+      <th style={{width: '150px'}}>Package Manager</th>
+      <th align="right">Average number of dependent projects*</th>
+      <th align="right">Average number of direct contributors*</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maven (Java)</td>
+      <td align="right">167,000</td>
+      <td align="right">99</td>
+    </tr>
+    <tr>
+      <td>pip (Python)</td>
+      <td align="right">78,000</td>
+      <td align="right">204</td>
+    </tr>
+    <tr>
+      <td>npm (JavaScript)</td>
+      <td align="right">3,500,000</td>
+      <td align="right">35</td>
+    </tr>
+    <tr>
+      <td>NuGet (.NET)</td>
+      <td align="right">94,000</td>
+      <td align="right">109</td>
+    </tr>
+    <tr>
+      <td>RubyGems (Ruby)</td>
+      <td align="right">737,000</td>
+      <td align="right">146</td>
+    </tr>
+  </tbody>
+</table>
+
+_* (among top 50 packages)_
+
+NPM most used projects have a considerably lower number of maintainers than in other ecosystems. This is because by leveraging the extensive catalog of existing solutions, each project can do more with less code, leveraging the "lego bricks" provided by the community.
+
+The relationship between modularity and innovation is an idea that Peter H. Salus documented in 1994 (but can be traced back to 1978), in what it's known today as the Unix philosophy. Among it's principles: "write programs that do one thing and do it well" and "write programs that work together".
+
+If these qualities are so established, why so much detractors and so much hate against the npm ecosystem? I believe part of the answer is churn. Churn due to the radical, profound transformation the ecosystem went to, from what it was just 10 or 15 years ago:
+
+* From browser-only scripts to a universal platform running on servers
+* From dynamic typing to TypeScript’s safer, typed superset
+* From imperative UIs (jQuery) to declarative JSX, ultimately converging on React and its kin
+* From custom state managers (Redux, RxJS, MobX) to streamlined tools like Zustand and React Query
+* From styled-components and Emotion to utility-first frameworks such as Tailwind CSS
+* From bundling with Grunt, to Webpack, to Vite (and Rust-based bundlers)
+* And the same accross every single part of the developer experience: linters, formatters, test runners, monorepo tools, meta-frameworks and beyond
+
+The churn that most developers feel in the ecosystem (and the meme that "there's a new JS framework every day") is because for a while, it really was like that. But that's only a consequence of the incredible innovation the ecosystem went through.
+
+Today, the churn is slowing. We’re converging around proven practices, and a lot of the innovation we see lately is related to rewriting tools in Rust to improve performance, or folding multiple utilities into single solutions. Some maintainers are even flattening their dependency trees to reduce bloat (like Storybook's newest version announcement, where they highlight the flatter dependency tree), trading off ease of maintenance and modularity for fewer dependency conflicts and less security risks.
+
+Despite this convergence, it’s worth looking back with awe at what made the JavaScript ecosystem so uniquely fertile, and the era of experimentation we seem to be slowly leaving behind.
+
+So next time you hear a joke about the size of node_modules or a new JS framework, remember: it is a feature, not a bug.
