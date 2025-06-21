@@ -35,8 +35,14 @@ async function loadGoogleFont (font: string, weight: number, text: string) {
 
 export const runtime = 'edge';
 
-export async function GET(req: NextRequest, { params }: { params: { imgCode: string } }) {
-  const { imgCode } = await params;
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const imgCode = searchParams.get('imgCode');
+
+  if (!imgCode) {
+    return new Response('Invalid request', {status: 400});
+  }
+
   const meta = await getPostMeta(imgCode);
 
   return new ImageResponse(
