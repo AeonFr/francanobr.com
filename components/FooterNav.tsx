@@ -5,12 +5,13 @@ import { FunctionComponent, ReactNode } from 'react';
 interface LinkProps {
     href: string;
     rel?: string;
+    target?: string;
     children: ReactNode;
 }
 
 type FooterNavLinkProps = LinkProps & { as?: FunctionComponent<LinkProps & { className?: string; }> };
 
-function FooterNavLink({href, as, rel, children}: FooterNavLinkProps) {
+function FooterNavLink({href, as, rel, target, children}: FooterNavLinkProps) {
     let El: string | typeof as = 'a';
     if (as) {
         El = as;
@@ -22,6 +23,7 @@ function FooterNavLink({href, as, rel, children}: FooterNavLinkProps) {
                 <El
                     href={href}
                     rel={rel}
+                    target={target}
                     className="
                         p-3
                         text-blue-600
@@ -60,6 +62,7 @@ export default function FooterNav() {
                     <li>
                         <FooterNavLink 
                             href="https://www.linkedin.com/in/franciscocanobrusa/"
+                            target="_blank"
                             rel="noopener noreferrer"
                         >
                             LinkedIn&nbsp;<ExternalLink className="inline w-3 h-3" />
@@ -68,6 +71,7 @@ export default function FooterNav() {
                     <li>
                         <FooterNavLink 
                             href="https://bsky.app/profile/francanobr.com"
+                            target="_blank"
                             rel="noopener noreferrer"
                         >
                             Bluesky&nbsp;<ExternalLink className="inline w-3 h-3" />
