@@ -67,11 +67,3 @@ export default function Home() {
     </div>
   );
 }
-
-function ExternalLink({ href, children, className }: { href: string; children: string; className?: string; }) {
-  return (
-    <a href={href} className={"text-blue-600 underline underline-offset-4 hover:bg-blue-600 hover:text-white hover:no-underline" + (className || "")}>
-      {children}
-    </a>
-  )
-}
