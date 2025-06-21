@@ -10,7 +10,7 @@ export default function Home() {
         transform: 'rotate(-28deg) skew(25deg)',
         transformOrigin: 'left'
       }}>
-        <h1 className="font-title text-5xl lg:text-6xl mb-4 text-nowrap ml-4 sm:ml-0 text-orange-600 tracking-tight">
+        <h1 className="text-5xl lg:text-6xl mb-4 text-nowrap ml-4 sm:ml-0 text-orange-600 font-extrabold font-stretch-expanded">
           Hi, I&rsquo;m Fran
         </h1>
       </div>
