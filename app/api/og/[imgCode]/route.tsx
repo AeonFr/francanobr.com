@@ -11,6 +11,7 @@ async function getPostMeta(imgCode: string) {
         date
     } as { title: string, date: string };
   } catch(e) {
+    console.error(e);
     return {
         title: 'Hi, I’m Fran',
         date: ''
