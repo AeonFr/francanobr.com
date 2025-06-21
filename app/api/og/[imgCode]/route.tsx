@@ -1,6 +1,5 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
-import Svg from "../../../icon.svg";
 
 const SITE_URL = 'francanobr.com';
 
