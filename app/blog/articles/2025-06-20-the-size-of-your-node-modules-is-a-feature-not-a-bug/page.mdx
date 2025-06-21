@@ -2,6 +2,15 @@ export const metadata = {
   title: "The size of your node_modules is a feature, not a bug",
   date: "2025-06-20",
   description: "JavaScript ecosystem, the good parts.",
+  openGraph: {
+    images: [
+      {
+        url: `/api/og/${btoa(JSON.stringify({ title: 'The size of your node_modules is a feature, not a bug', date: '2025.06.20' }))}`,
+        width: 800,
+        height: 600,
+      }
+    ]
+  }
 };
 
 # The size of your node_modules is a feature, not a bug
