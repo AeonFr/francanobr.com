@@ -3,6 +3,15 @@ export const metadata = {
   title: "History of React and Modern JS Frameworks",
   description:
     "We take a look into the history of React and the declarative paradigm for building UIs",
+  openGraph: {
+    images: [
+      {
+        url: `/api/og/${btoa(JSON.stringify({ title: 'History of React and Modern JS Frameworks', date: '2020.02.05' }))}`,
+        width: 1200,
+        height: 630,
+      }
+    ]
+  }
 };
 
 import Counter from "./Counter";

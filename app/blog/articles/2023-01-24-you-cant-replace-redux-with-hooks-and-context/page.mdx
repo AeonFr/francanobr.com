@@ -1,11 +1,16 @@
 export const metadata = {
   title: "You can’t replace Redux with Hooks and Context",
   date: "2023-01-24",
-  socialImage:
-    "/blog/you-cant-replace-redux-with-hooks-and-context/social-image.png",
   description: "Creating a simple state management solution from scratch.",
-  thumbnail:
-    "/blog/you-cant-replace-redux-with-hooks-and-context/thumbnail.png",
+  openGraph: {
+    images: [
+      {
+        url: `/api/og/${btoa(JSON.stringify({ title: 'You can’t replace Redux with Hooks and Context', date: '2023.01.24' }))}`,
+        width: 1200,
+        height: 630,
+      }
+    ]
+  }
 };
 import EnhancedExperienceLoader from "./EnhancedExperienceLoader.tsx";
 

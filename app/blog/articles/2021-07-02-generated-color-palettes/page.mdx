@@ -1,10 +1,17 @@
 export const metadata = {
   title: "Generating color palettes with code",
   date: "2021-07-02",
-  socialImage: "/blog/generated-color-palettes/social-image.png",
   description:
     "Why you shouldn’t trust color functions like hsl(), lighten() or darken()",
-  thumbnail: "/blog/generated-color-palettes/thumbnail.svg",
+  openGraph: {
+    images: [
+      {
+        url: `/api/og/${btoa(JSON.stringify({ title: 'Generating color palettes with code', date: '2021.07.02' }))}`,
+        width: 1200,
+        height: 630,
+      }
+    ]
+  }
 };
 
 import { ColorPalette, HSLuvColorPalette } from "./ColorPalette";
