@@ -8,6 +8,8 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
       <Container className="mt-8">
         <nav>
           <CustomLink href="/">Hi, I&rsquo;m Fran</CustomLink>
+          <span className="mx-2">▸</span>
+          <CustomLink href="/blog">Blog</CustomLink>
           <hr className="mt-2 border-gray-500" />
         </nav>
       </Container>

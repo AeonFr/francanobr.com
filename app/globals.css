@@ -2,7 +2,7 @@
 
 /* Show baseline grid */
 html.show-grid body {
-  background-image: linear-gradient(to bottom, #0ff 0, transparent 1px);
+  background-image: linear-gradient(to bottom, #eee 0, transparent 1px);
   background-repeat: repeat-y;
   background-size: 100% 1rem;
 }
