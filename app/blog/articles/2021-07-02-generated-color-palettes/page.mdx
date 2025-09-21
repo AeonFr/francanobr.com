@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        url: `/api/og/${btoa(JSON.stringify({ title: 'Generating color palettes with code', date: '2021.07.02' }))}`,
+        url: `/api/og/${Buffer.from(JSON.stringify({ title: 'Generating color palettes with code', date: '2021.07.02' })).toString("base64")}`,
         width: 1200,
         height: 630,
       }

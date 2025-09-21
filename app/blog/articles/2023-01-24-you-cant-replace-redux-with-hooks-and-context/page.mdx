@@ -5,14 +5,14 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        url: `/api/og/${btoa(JSON.stringify({ title: 'You can’t replace Redux with Hooks and Context', date: '2023.01.24' }))}`,
+        url: `/api/og/${Buffer.from(JSON.stringify({ title: 'You can’t replace Redux with Hooks and Context', date: '2023.01.24' })).toString("base64")}`,
         width: 1200,
         height: 630,
       }
     ]
   }
 };
-import EnhancedExperienceLoader from "./EnhancedExperienceLoader.tsx";
+import EnhancedExperienceLoader from "./EnhancedExperienceLoader";
 
 export default ({children}) => {
   return <EnhancedExperienceLoader
