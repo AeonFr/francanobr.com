@@ -16,6 +16,11 @@ const chivoMono = Chivo_Mono({
 export const metadata: Metadata = {
   title: "Hi, I'm Fran",
   description: "Francisco Cano Brusa - personal website and blog",
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
 };
 
 export default function RootLayout({

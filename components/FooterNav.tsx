@@ -56,7 +56,7 @@ export default function FooterNav() {
                     </li>
                     <li>
                         <FooterNavLink href="/blog" as={NextLink}>
-                            Blog
+                            Writing
                         </FooterNavLink>
                     </li>
                     <li>

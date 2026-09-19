@@ -3,10 +3,16 @@ import SquircleProvider from "@/components/squircle/SquircleProvider";
 import Link from "next/link";
 import styles from "./bloglist.module.css";
 import FooterNav from "@/components/FooterNav";
+import { posts, formatPostDate } from "./posts";
 
 export const metadata = {
-  title: "Blog",
-}
+  title: "Writing",
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
+};
 
 export default function Blog() {
   return (
@@ -14,31 +20,25 @@ export default function Blog() {
       <div className="max-w-xl lg:max-w-2xl mx-auto my-24">
         <div className="mx-8">
           <h1 className="font-title text-8xl text-orange-600 tracking-tighter">
-            Blog
+            Writing
           </h1>
+
+          <p className="font-title-alt text-lg mt-2 mb-8 flex flex-wrap items-baseline gap-x-3">
+            <span>Occasional, long-form posts on frontend and architecture.</span>
+            <Link href="/feed.xml" className="text-blue-600 underline hover:text-blue-800 shrink-0">
+              RSS
+            </Link>
+          </p>
 
           <nav>
             <ul>
-              <li>
-                <BlogLink href="/blog/articles/2025-06-20-the-size-of-your-node-modules-is-a-feature-not-a-bug" date="June 20, 2025">
-                  The size of your node_modules is a feature, not a bug
-                </BlogLink>
-              </li>
-              <li>
-                <BlogLink href="/blog/articles/2023-01-24-you-cant-replace-redux-with-hooks-and-context" date="January 2023">
-                  You can&rsquo;t replace Redux with Hooks and Context (thoughts on React state management)
-                </BlogLink>
-              </li>
-              <li>
-                <BlogLink href="/blog/articles/2021-07-02-generated-color-palettes" date="July 2021">
-                  Generating color palettes programatically
-                </BlogLink>
-              </li>
-              <li>
-                <BlogLink href="/blog/articles/2020-02-05-history-of-react" date="February 2020">
-                  History of React and Modern JS Frameworks
-                </BlogLink>
-              </li>
+              {posts.map((post) => (
+                <li key={post.slug}>
+                  <BlogLink href={post.href} date={formatPostDate(post.date)} dek={post.dek}>
+                    {post.title}
+                  </BlogLink>
+                </li>
+              ))}
             </ul>
           </nav>
 
@@ -51,7 +51,7 @@ export default function Blog() {
   );
 }
 
-function BlogLink({ href, children, date }: { href: string, children: string, date: string }) {
+function BlogLink({ href, children, date, dek }: { href: string, children: string, date: string, dek: string }) {
   return (
     <Squircle className={styles.squircleBlogItem}>
       <Link href={href} className="block my-9 p-8 hover:text-white">
@@ -60,6 +60,9 @@ function BlogLink({ href, children, date }: { href: string, children: string, da
         </span>
         <span className="block text-md font-title-alt mt-2">
           {date}
+        </span>
+        <span className="block text-md mt-3 opacity-80">
+          {dek}
         </span>
       </Link>
     </Squircle>
