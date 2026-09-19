@@ -1,7 +1,7 @@
 import Squircle from "@/components/squircle/Squircle";
 import SquircleProvider from "@/components/squircle/SquircleProvider";
 import Link from "next/link";
-import styles from "./bloglist.module.css";
+import styles from "./writinglist.module.css";
 import FooterNav from "@/components/FooterNav";
 import { posts, formatPostDate } from "./posts";
 
@@ -14,7 +14,7 @@ export const metadata = {
   },
 };
 
-export default function Blog() {
+export default function Writing() {
   return (
     <SquircleProvider>
       <div className="max-w-xl lg:max-w-2xl mx-auto my-24">
@@ -34,24 +34,22 @@ export default function Blog() {
             <ul>
               {posts.map((post) => (
                 <li key={post.slug}>
-                  <BlogLink href={post.href} date={formatPostDate(post.date)} dek={post.dek}>
+                  <WritingLink href={post.href} date={formatPostDate(post.date)} dek={post.dek}>
                     {post.title}
-                  </BlogLink>
+                  </WritingLink>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <footer>
-            <FooterNav />
-          </footer>
+          <FooterNav current="writing" />
         </div>
       </div>
     </SquircleProvider>
   );
 }
 
-function BlogLink({ href, children, date, dek }: { href: string, children: string, date: string, dek: string }) {
+function WritingLink({ href, children, date, dek }: { href: string, children: string, date: string, dek: string }) {
   return (
     <Squircle className={styles.squircleBlogItem}>
       <Link href={href} className="block my-9 p-8 hover:text-white">

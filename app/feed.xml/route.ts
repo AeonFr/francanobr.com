@@ -1,4 +1,4 @@
-import { posts } from "@/app/blog/posts";
+import { posts } from "@/app/writing/posts";
 
 const SITE_URL = "https://www.francanobr.com";
 
@@ -28,7 +28,7 @@ export async function GET() {
 <rss version="2.0">
   <channel>
     <title>Fran Cano Brusa — Writing</title>
-    <link>${SITE_URL}/blog</link>
+    <link>${SITE_URL}/writing</link>
     <description>Occasional, long-form posts on frontend and architecture.</description>
     <language>en</language>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />

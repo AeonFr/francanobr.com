@@ -37,32 +37,7 @@ export default function Home() {
             </p>
         </main>
 
-        <footer className="absolute mt-24">
-          <FooterNav/>
-        </footer>
-
-
-        <div className="-mr-8 overflow-hidden sm:overflow-visible">
-          <div className="block ml-auto mt-6 -mr-24 text-sm text-center" style={{ width: 300 }}>
-            <Image src="/me.png" alt="A picture of me" width={300} height={300} className="rounded-full" />
-            <svg
-              aria-hidden
-              className="mx-auto mt-4"
-              width="32"
-              height="32"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M32 56 Q48 48 32 40 Q16 32 32 24" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M32 24 L32 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M28 12 L32 8 L36 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <p>
-              A picture of me
-            </p>
-          </div>
-        </div>
+        <FooterNav current="home" />
       </div>
     </div>
   );

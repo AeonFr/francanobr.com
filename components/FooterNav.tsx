@@ -44,23 +44,55 @@ function FooterNavLink({href, as, rel, target, children}: FooterNavLinkProps) {
     )
 }
 
-export default function FooterNav() {
+// The current page, rendered in the same slot as a FooterNavLink but as
+// plain text: it's not useful to link to the page you're already on.
+function FooterNavCurrent({ children }: { children: ReactNode }) {
+    return (
+        <div className="relative">
+            <div className="absolute -inset-3">
+                <span
+                    aria-current="page"
+                    className="block p-3 text-gray-400 font-extrabold basis-full"
+                >
+                    {children}
+                </span>
+            </div>
+            {/* An empty element to take proper width */}
+            <div aria-hidden="true" className="invisible font-extrabold font-stretch-semi-expanded">{children}</div>
+        </div>
+    )
+}
+
+interface FooterNavProps {
+    /** The page this FooterNav is rendered on, so it isn't linked to itself. */
+    current?: 'home' | 'writing';
+}
+
+export default function FooterNav({ current }: FooterNavProps) {
     return (
         <footer className="w-full py-6 mt-8 border-t">
             <nav className="container mx-auto px-4">
                 <ul className="flex justify-center gap-6 text-sm">
                     <li>
-                        <FooterNavLink href="/" as={NextLink}>
-                            Home
-                        </FooterNavLink>
+                        {current === 'home' ? (
+                            <FooterNavCurrent>Home</FooterNavCurrent>
+                        ) : (
+                            <FooterNavLink href="/" as={NextLink}>
+                                Home
+                            </FooterNavLink>
+                        )}
                     </li>
                     <li>
-                        <FooterNavLink href="/blog" as={NextLink}>
-                            Writing
-                        </FooterNavLink>
+                        {current === 'writing' ? (
+                            <FooterNavCurrent>Writing</FooterNavCurrent>
+                        ) : (
+                            <FooterNavLink href="/writing" as={NextLink}>
+                                Writing
+                            </FooterNavLink>
+                        )}
                     </li>
                     <li>
-                        <FooterNavLink 
+                        <FooterNavLink
                             href="https://www.linkedin.com/in/franciscocanobrusa/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -69,7 +101,7 @@ export default function FooterNav() {
                         </FooterNavLink>
                     </li>
                     <li>
-                        <FooterNavLink 
+                        <FooterNavLink
                             href="https://bsky.app/profile/francanobr.com"
                             target="_blank"
                             rel="noopener noreferrer"

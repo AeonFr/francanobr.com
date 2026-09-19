@@ -9,7 +9,7 @@ export default function BlogPostLayout({ children }: { children: React.ReactNode
         <nav>
           <CustomLink href="/">Hi, I&rsquo;m Fran</CustomLink>
           <span className="mx-2">▸</span>
-          <CustomLink href="/blog">Writing</CustomLink>
+          <CustomLink href="/writing">Writing</CustomLink>
           <hr className="mt-2 border-gray-500" />
         </nav>
       </Container>
