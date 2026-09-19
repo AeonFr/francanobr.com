@@ -52,7 +52,7 @@ function FooterNavCurrent({ children }: { children: ReactNode }) {
             <div className="absolute -inset-3">
                 <span
                     aria-current="page"
-                    className="block p-3 text-gray-400 font-extrabold basis-full"
+                    className="p-3 text-gray-400 font-extrabold basis-full"
                 >
                     {children}
                 </span>

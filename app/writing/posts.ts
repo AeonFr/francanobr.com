@@ -13,13 +13,6 @@ export interface Post {
 // for per-page SEO, but titles/dates/deks shown elsewhere should read from here.
 export const posts: Post[] = [
   {
-    slug: "2025-06-20-the-size-of-your-node-modules-is-a-feature-not-a-bug",
-    href: "/writing/articles/2025-06-20-the-size-of-your-node-modules-is-a-feature-not-a-bug",
-    title: "The size of your node_modules is a feature, not a bug",
-    date: "2025-06-20",
-    dek: "Why obsessing over dependency bloat misses the actual trade-off you're making.",
-  },
-  {
     slug: "2023-01-24-you-cant-replace-redux-with-hooks-and-context",
     href: "/writing/articles/2023-01-24-you-cant-replace-redux-with-hooks-and-context",
     title: "You can’t replace Redux with Hooks and Context",
