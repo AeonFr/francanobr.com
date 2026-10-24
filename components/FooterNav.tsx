@@ -65,7 +65,7 @@ function FooterNavCurrent({ children }: { children: ReactNode }) {
 
 interface FooterNavProps {
     /** The page this FooterNav is rendered on, so it isn't linked to itself. */
-    current?: 'home' | 'writing';
+    current?: 'home' | 'writing' | 'projects';
 }
 
 export default function FooterNav({ current }: FooterNavProps) {
@@ -88,6 +88,15 @@ export default function FooterNav({ current }: FooterNavProps) {
                         ) : (
                             <FooterNavLink href="/writing" as={NextLink}>
                                 Writing
+                            </FooterNavLink>
+                        )}
+                    </li>
+                    <li>
+                        {current === 'projects' ? (
+                            <FooterNavCurrent>Projects</FooterNavCurrent>
+                        ) : (
+                            <FooterNavLink href="/projects" as={NextLink}>
+                                Projects
                             </FooterNavLink>
                         )}
                     </li>

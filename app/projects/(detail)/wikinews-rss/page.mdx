@@ -1,0 +1,28 @@
+export const metadata = {
+  title: "Wikipedia News RSS",
+  description: "Wikipedia’s current events as an RSS feed, in English and Spanish.",
+};
+
+import ProjectHero from "@/components/ProjectHero";
+
+# Wikipedia News RSS
+
+
+<ProjectHero
+  image="/projects/wikinews-rss.png"
+  alt="Homepage of Wikipedia news as RSS, with the Spanish and English feed links and the latest English articles"
+  href="https://aeonfr.github.io/wikinews-rss/"
+  label="Visit the project"
+/>
+
+I realized there’s no RSS feed of the Wikipedia News section. I usually read the news every morning from the [feeeed app](https://feeeed.nateparrott.com), a great free app by Nate Parrot (he worked at Arc browser) that is simply an add-free RSS reader (that also supports Reddit, HackerNews, and others).
+
+Recently, Reddit capped API access, which means that suddently I no longer saw news from `r/worldnews` in my feeeed. Although access for now seems restored, it seems to be working a little bit inconsistently recently. I wanted to have another source of world news.
+
+That's when I discovered Wikipedia News section, and the motivation behind this project.
+
+## How I made it
+
+This project was entirely “vibe-coded” using Claude, and by that I mean that I didn't read the code. It is written in Phython and deployed to GitHub pages. A scheduled GitHub Workflow runs every day, getting the newest links.
+
+The whole project took about 30 minutes to write, more or less. I cannot imagine doing something like this in so little time! I imagine I will still take more time refining the whole thing, checking nuances of GitHub pages (apparently workflows could stop running if the repo doesn't have enough activity, I don’t know yet if activity from automations count!), etc… But still, I’m already finding it useful.

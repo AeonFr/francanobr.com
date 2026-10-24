@@ -1,0 +1,28 @@
+export const metadata = {
+  title: "Minerogue",
+  description: "A Minesweeper roguelike you can play in the browser.",
+};
+
+import ProjectHero from "@/components/ProjectHero";
+
+# Minerogue
+
+
+<ProjectHero
+  image="/projects/minerogue.png"
+  alt="Minerogue mid-round: a partly cleared 7×7 minefield with score, multiplier and card slots"
+  href="https://minerogue.francanobr.com/"
+  label="Play Minerogue"
+/>
+
+After playing Balatro I started thinking how the concept could be applied to other games. For the ones that don’t know: Blatro is a “Poker roguelike”, a.k.a. “spicy poker”. During the game you have to reach certain score to win a round, and at the end of the round you earn money which you can spend in special “tarot cards”, “planet cards” and “joker cards”, each one with different characteristics, ways of being used, and effects, but all of them basically aimed at letting you win next rounds faster.
+
+Maybe I was also inspired by [Triple AAA Minesweeper](https://minesweeper.mikelacher.com), who knows. But the idea grew in my head: to do a Balatro-inspired version of Minesweeper. Since I have no experience in game design, the whole thing would be vibe-coded. In fact, everything from the scoring system to the different “bonus cards” was entirely decided by Claude. That’s why I don’t consider this a fully-fledged game, just a “prototype” that is maybe the seed for developing a game.
+
+While researching the idea, I realized some serious game developers are working on similar ideas. Googling “Minesweeper roguelike” produces dozens of results for similar games. My idea was not so original, but I still think it’s fun to play, so I’m happy with the result.
+
+## How I made it
+
+The game was vibe-coded entirely, I didn’t change a single line of code by hand. However, that doesn’t mean it was just a simple prompt. A previous version of the game was done using poor prompting and I ended up discarding it since it contained some structural flaws (for example, there was a screenshot testing suite that took over 15 minutes to run). After reading the article [Your game is a harness](https://kylekukshtel.com/ai-harness-engineering-game-development-claude-code?via=dailydev) by Kyle Kukshtel, I got inspired and guided the agent to use best-practices such as seeded randomness, reproductible state, and simulations.
+
+The UI uses [98.css](https://jdan.github.io/98.css/) and icons are from [95.css](https://win98icons.alexmeub.com), which gives the game that nostalgia feeling.
